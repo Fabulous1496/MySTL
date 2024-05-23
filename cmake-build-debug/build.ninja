@@ -55,6 +55,12 @@ build CMakeFiles/MySTL.dir/main.cpp.obj: CXX_COMPILER__MySTL_unscanned_Debug C$:
   OBJECT_DIR = CMakeFiles\MySTL.dir
   OBJECT_FILE_DIR = CMakeFiles\MySTL.dir
 
+build CMakeFiles/MySTL.dir/AList.cpp.obj: CXX_COMPILER__MySTL_unscanned_Debug C$:/Users/ASUS/Desktop/MySTL/AList.cpp || cmake_object_order_depends_target_MySTL
+  DEP_FILE = CMakeFiles\MySTL.dir\AList.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\MySTL.dir
+  OBJECT_FILE_DIR = CMakeFiles\MySTL.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MySTL
@@ -63,7 +69,7 @@ build CMakeFiles/MySTL.dir/main.cpp.obj: CXX_COMPILER__MySTL_unscanned_Debug C$:
 #############################################
 # Link the executable MySTL.exe
 
-build MySTL.exe: CXX_EXECUTABLE_LINKER__MySTL_Debug CMakeFiles/MySTL.dir/main.cpp.obj
+build MySTL.exe: CXX_EXECUTABLE_LINKER__MySTL_Debug CMakeFiles/MySTL.dir/main.cpp.obj CMakeFiles/MySTL.dir/AList.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\MySTL.dir

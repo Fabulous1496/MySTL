@@ -1,17 +1,24 @@
-#ifndef MYSTL_ALIST_HPP
-#define MYSTL_ALIST_HPP
+#ifndef MYSTL_ALIST_H
+#define MYSTL_ALIST_H
 #include "List.h"
 
 template<class T>
-class Alist : public list<T> {
+class AList : public list<T> {
 private:
-    T *items;
+    T *data;
     int currentSize;
     int maxSize;
     void resize();
 public:
-    Alist(){};
-    ~Alist(){};
+    AList(int initSize=10);
+    ~AList();
+    void clear();
+    int length() const;
+    void insert(int i, const T &item);
+    void remove(int i);
+    int search(const T &item) const;
+    T get(int index);
+    void traverse() const;
 
 };
 
