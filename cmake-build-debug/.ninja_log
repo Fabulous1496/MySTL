@@ -1,0 +1,6 @@
+# ninja log v5
+8	238	7382563655249484	CMakeFiles/MySTL.dir/AList.cpp.obj	8634c4dbdd8a7bf6
+0	659	7382579556202731	build.ninja	8709bcaad66e48e5
+2	259	7382573730482431	CMakeFiles/MySTL.dir/main.cpp.obj	b486f74af3447ad9
+259	631	7382573734153049	MySTL.exe	e8e960f218f45d9b
+9	232	7382573730217884	CMakeFiles/MySTL.dir/List/AList.cpp.obj	9f52af987e4b7d34

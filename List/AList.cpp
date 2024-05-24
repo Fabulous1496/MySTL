@@ -91,3 +91,14 @@ AList<T>::~AList()
 {
     delete[] data;
 }
+
+template<class T>
+void AList<T>::push_back(const T &item)
+{
+    if(currentSize == maxSize)
+    {
+        resize();
+    }
+    data[currentSize] = item;
+    currentSize++;
+}

@@ -19,6 +19,7 @@ public:
     int search(const T &item) const;
     T get(int index);
     void traverse() const;
+    void push_back(const T &item);
 
 };
 
