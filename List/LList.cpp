@@ -1,20 +1,34 @@
 #include <iostream>
 #include "LList.h"
+template<class T>
+Node<T>::Node(const T &x, Node *p, Node *n)
+{
+    item = x;
+    prev = p;
+    next = n;
+}
+
+template<class T>
+Node<T>::Node()
+{
+    prev = NULL;
+    next = NULL;
+}
 
 template<class T>
 LList<T>::LList()
 {
-    head = new Node();
-    tail = new Node();
-    head.next = tail;
-    tail.prev = head;
+    head = Node<T>();
+    tail = Node<T>();
+    head.next = &tail;
+    tail.prev = &head;
     currentSize = 0;
 }
 
 template<class T>
-LList<T>::Node *LList<T>::move(int index) const
+Node<T> *LList<T>::move(int index) const
 {
-    Node *p = head;
+    Node<T> *p = head;
     while(index-- >= 0)
     {
         p = p->next;
@@ -25,7 +39,7 @@ LList<T>::Node *LList<T>::move(int index) const
 template<class T>
 void LList<T>::insert(int i, const T &item)
 {
-    Node* pos,tmp;
+    Node<T>* pos,tmp;
     pos = move(i);
     tmp = new Node(item,pos->prev,pos);
     pos->prev->next = tmp;
@@ -36,7 +50,7 @@ void LList<T>::insert(int i, const T &item)
 template<class T>
 void LList<T>::remove(int i)
 {
-    Node* pos;
+    Node<T>* pos;
     pos = move(i);
     pos->prev->next = pos->next;
     pos->next->prev = pos->prev;
@@ -47,10 +61,10 @@ void LList<T>::remove(int i)
 template<class T>
 void LList<T>::clear()
 {
-    Node* pos = head.next;
+    Node<T>* pos = head.next;
     while(pos != tail)
     {
-        Node* tmp = pos;
+        Node<T>* tmp = pos;
         pos = pos->next;
         delete tmp;
     }
@@ -68,7 +82,7 @@ int LList<T>::length() const
 template<class T>
 int LList<T>::search(const T &item) const
 {
-    Node* pos = head.next;
+    Node<T>* pos = head.next;
     int index = 0;
     while(pos != tail)
     {
@@ -85,14 +99,14 @@ int LList<T>::search(const T &item) const
 template<class T>
 T LList<T>::get(int index)
 {
-    Node* pos = move(index);
+    Node<T>* pos = move(index);
     return pos->item;
 }
 
 template<class T>
 void LList<T>::push_front(const T &item)
 {
-    Node* tmp = new Node(item,head,head.next);
+    Node<T>* tmp = new Node(item,head,head.next);
     head.next = tmp;
     tmp->next->prev = tmp;
     currentSize++;
@@ -101,7 +115,7 @@ void LList<T>::push_front(const T &item)
 template<class T>
 void LList<T>::push_back(const T &item)
 {
-    Node* tmp = new Node(item,tail.prev,tail);
+    Node<T>* tmp = new Node(item,tail.prev,tail);
     tail.prev = tmp;
     tmp->prev->next = tmp;
     currentSize++;
@@ -110,7 +124,7 @@ void LList<T>::push_back(const T &item)
 template<class T>
 void LList<T>::traverse() const
 {
-    Node* pos = head.next;
+    Node<T>* pos = head.next;
     if(pos == tail)
     {
         std::cout << "The List is empty!" << std::endl;
@@ -130,7 +144,17 @@ template<class T>
 LList<T>::~LList()
 {
     clear();
-    delete head;
-    delete tail;
 }
 
+template<class T>
+LList<T>::LList(const LList &other) : currentSize(0)
+{
+    head.next = tail;
+    tail.prev = head;
+    Node<T>* current = other.head.next;
+    while (current != &other.tail)
+    {
+        push_back(current->item);
+        current = current->next;
+    }
+}

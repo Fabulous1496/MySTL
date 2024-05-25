@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 #include "List/List.h"
-#include "List/AList.h"
 #include "List/AList.cpp"
+#include "List/LList.cpp"
 
 void test_AList_01()
 {

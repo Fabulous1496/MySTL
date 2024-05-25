@@ -3,28 +3,29 @@
 #include "List.h"
 
 template<class T>
+class Node
+{
+public:
+    T item;
+    Node *prev;
+    Node *next;
+    Node(const T &x, Node *p = NULL, Node *n = NULL);
+    Node();
+    ~Node() {};
+};
+
+
+
+template<class T>
 class LList : list<T>
 {
-private:
+public:
     int currentSize;
-    class Node
-    {
-        T item;
-        Node *prev;
-        Node *next;
-        Node(const T &x, Node *p = NULL, Node *n = NULL)
-        {
-            item = x;
-            prev = p;
-            next = n;
-        }
-        Node():prev(NULL), next(NULL) {};
-        ~Node() {};
-    };
-    Node head,tail;
-    Node* move(int index) const;
+    Node<T> head,tail;
+    Node<T>* move(int index) const;
 public:
     LList();
+    LList(const LList &other);
     ~LList();
     void clear();
     int length() const;

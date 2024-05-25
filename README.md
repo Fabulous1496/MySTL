@@ -2,12 +2,9 @@
 Create a personal STL(For Data Structure)
 ## 线性表（List）
 - [x] AList  顺序表，基于Array
-<<<<<<< HEAD
-- [ ] LList  链表，链接实现
-=======
 - [x] LList  双向双端链表，通过链接实现
 ## 栈（Stack）
-- [ ] 顺序栈
+- [x] 顺序栈
 - [ ] 链接栈
 - [ ] Calculator  基于栈的后缀表达式计算器
 ## 队列（Queue）
@@ -26,4 +23,3 @@ Create a personal STL(For Data Structure)
 - [ ] Disjoint Set  不相交集
 ## 图（Graph）
 - [ ] 无向图
->>>>>>> 491a417 (Finished the LList)

@@ -9,4 +9,7 @@ add_executable(MySTL main.cpp
         List/AList.cpp
         List/LList.h
         List/LList.cpp
+        Stack/stack.h
+        Stack/AStack.h
+        Stack/AStack.cpp
 )
