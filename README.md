@@ -5,8 +5,8 @@ Create a personal STL(For Data Structure)
 - [x] LList  双向双端链表，通过链接实现
 ## 栈（Stack）
 - [x] 顺序栈
-- [ ] 链接栈
-- [ ] Calculator  基于栈的后缀表达式计算器
+- [x] 链接栈
+- [x] Calculator  基于栈的后缀表达式计算器
 ## 队列（Queue）
 - [ ] 顺序循环队列
 - [ ] 链接队列

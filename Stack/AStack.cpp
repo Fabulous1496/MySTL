@@ -29,7 +29,7 @@ AStack<T>::~AStack()
 }
 
 template<class T>
-bool AStack<T>::isEmpty()
+bool AStack<T>::isEmpty() const
 {
     return top==-1;
 }
@@ -69,5 +69,6 @@ void AStack<T>::traverse()
         {
             std::cout << data[i] << " ";
         }
+        std::cout << std::endl;
     }
 }

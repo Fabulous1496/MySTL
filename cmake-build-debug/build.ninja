@@ -73,6 +73,18 @@ build CMakeFiles/MySTL.dir/Stack/AStack.cpp.obj: CXX_COMPILER__MySTL_unscanned_D
   OBJECT_DIR = CMakeFiles\MySTL.dir
   OBJECT_FILE_DIR = CMakeFiles\MySTL.dir\Stack
 
+build CMakeFiles/MySTL.dir/Stack/LStack.cpp.obj: CXX_COMPILER__MySTL_unscanned_Debug C$:/Users/ASUS/Desktop/MySTL/Stack/LStack.cpp || cmake_object_order_depends_target_MySTL
+  DEP_FILE = CMakeFiles\MySTL.dir\Stack\LStack.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\MySTL.dir
+  OBJECT_FILE_DIR = CMakeFiles\MySTL.dir\Stack
+
+build CMakeFiles/MySTL.dir/Stack/Calculator.cpp.obj: CXX_COMPILER__MySTL_unscanned_Debug C$:/Users/ASUS/Desktop/MySTL/Stack/Calculator.cpp || cmake_object_order_depends_target_MySTL
+  DEP_FILE = CMakeFiles\MySTL.dir\Stack\Calculator.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\MySTL.dir
+  OBJECT_FILE_DIR = CMakeFiles\MySTL.dir\Stack
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MySTL
@@ -81,7 +93,7 @@ build CMakeFiles/MySTL.dir/Stack/AStack.cpp.obj: CXX_COMPILER__MySTL_unscanned_D
 #############################################
 # Link the executable MySTL.exe
 
-build MySTL.exe: CXX_EXECUTABLE_LINKER__MySTL_Debug CMakeFiles/MySTL.dir/main.cpp.obj CMakeFiles/MySTL.dir/List/AList.cpp.obj CMakeFiles/MySTL.dir/List/LList.cpp.obj CMakeFiles/MySTL.dir/Stack/AStack.cpp.obj
+build MySTL.exe: CXX_EXECUTABLE_LINKER__MySTL_Debug CMakeFiles/MySTL.dir/main.cpp.obj CMakeFiles/MySTL.dir/List/AList.cpp.obj CMakeFiles/MySTL.dir/List/LList.cpp.obj CMakeFiles/MySTL.dir/Stack/AStack.cpp.obj CMakeFiles/MySTL.dir/Stack/LStack.cpp.obj CMakeFiles/MySTL.dir/Stack/Calculator.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\MySTL.dir

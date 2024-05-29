@@ -12,4 +12,8 @@ add_executable(MySTL main.cpp
         Stack/stack.h
         Stack/AStack.h
         Stack/AStack.cpp
+        Stack/LStack.cpp
+        Stack/LStack.h
+        Stack/Calculator.cpp
+        Stack/Calculator.h
 )

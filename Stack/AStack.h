@@ -14,7 +14,7 @@ private:
 public:
     AStack(int initSize = 10);
     ~AStack();
-    bool isEmpty();
+    bool isEmpty() const;
     void push(const T& x);
     T pop();
     T getTop() const ;
