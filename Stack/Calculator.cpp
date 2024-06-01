@@ -8,10 +8,12 @@ Calculator::token Calculator::getOp(int &value)
     {
         ++expression;
     }
+
     if(*expression == '\0')
     {
         return EOL;
     }
+
     if(*expression <= '9' && *expression >= '0')
     {
         value = 0;
@@ -28,31 +30,27 @@ Calculator::token Calculator::getOp(int &value)
         case '(' :
             expression++;
             return OPAREN;
-            break;
         case ')' :
             expression++;
             return CPAREN;
-            break;
         case '+' :
             expression++;
             return ADD;
-            break;
         case '-' :
             expression++;
             return SUB;
-            break;
         case '*' :
             expression++;
             return MULTI;
-            break;
         case '/' :
             expression++;
             return DIV;
-            break;
         case '^' :
             expression++;
             return EXP;
-            break;
+        default:
+            std::cerr << "Catch an error!" << *expression << std::endl;
+            exit(1);
     }
 }
 
@@ -92,6 +90,9 @@ void Calculator::BinaryOp(token op, AStack<int> &dataStack)
         case EXP:
             dataStack.push(pow(num1,num2));
             break;
+        default:
+            std::cerr << "Catch an error!" << *expression << std::endl;
+            exit(1);
     }
 }
 
@@ -127,12 +128,6 @@ int Calculator::result()
                 opStack.push(EXP);
                 break;
             case MULTI:
-                while(!opStack.isEmpty() && opStack.getTop()>=MULTI)
-                {
-                    BinaryOp(opStack.pop(),dataStack);
-                }
-                opStack.push(lastOp);
-                break;
             case DIV:
                 while(!opStack.isEmpty() && opStack.getTop()>=MULTI)
                 {
@@ -141,12 +136,6 @@ int Calculator::result()
                 opStack.push(lastOp);
                 break;
             case ADD:
-                while(!opStack.isEmpty() && opStack.getTop() != OPAREN)
-                {
-                    BinaryOp(opStack.pop(), dataStack);
-                }
-                opStack.push(lastOp);
-                break;
             case SUB:
                 while(!opStack.isEmpty() && opStack.getTop() != OPAREN)
                 {

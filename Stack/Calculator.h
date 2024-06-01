@@ -1,7 +1,8 @@
 #ifndef MYSTL_CALCULATOR_H
 #define MYSTL_CALCULATOR_H
-#include "AStack.h"
+
 #include <string>
+#include "AStack.h"
 
 class Calculator
 {

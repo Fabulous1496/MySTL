@@ -4,7 +4,8 @@
 #include "List/LList.cpp"
 #include "Stack/AStack.cpp"
 #include "Stack/LStack.cpp"
-#include "Stack/Calculator.cpp"
+#include "Queue/seqQueue.cpp"
+#include "Queue/linkQueue.hpp"
 
 void test_AList_01()
 {
@@ -67,15 +68,39 @@ void test_LStack_01()
     std::cout << num.getTop() << std::endl;
 }
 
-//void test_calc_01()
-//{
-//    Calculator exp("3*(11-7)/6");
-//    std::cout << exp.result() << std::endl;
-//}
+void test_Calculator_01()
+{
+    char str[] = "3*(11-7)/2";
+    Calculator exp (str);
+    std::cout << exp.result() << std::endl;
+}
+
+void test_seqQueue()
+{
+    seqQueue<int> num = seqQueue<int>();
+    for(int i =1;i<=10;i++)
+    {
+        num.enQueue(i);
+    }
+    num.traverse();
+}
+
+void test_linkQueue()
+{
+    linkQueue<int> num = linkQueue<int>();
+    for(int i =1;i<=10;i++)
+    {
+        num.enQueue(i);
+    }
+    std::cout << num.deQueue() << std::endl;
+    num.traverse();
+}
+
 int main() {
     //test_AStack_01();
-    test_LList_01();
-    test_AStack_01();
-    //test_calc_01();
+    //test_LList_01();
+    //test_Calculator_01();
+    test_seqQueue();
+    test_linkQueue();
     return 0;
 }

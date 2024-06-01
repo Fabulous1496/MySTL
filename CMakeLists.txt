@@ -16,4 +16,8 @@ add_executable(MySTL main.cpp
         Stack/LStack.h
         Stack/Calculator.cpp
         Stack/Calculator.h
+        Queue/queue.h
+        Queue/seqQueue.cpp
+        Queue/seqQueue.h
+        Queue/linkQueue.hpp
 )

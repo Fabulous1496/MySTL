@@ -72,3 +72,7 @@ void AStack<T>::traverse()
         std::cout << std::endl;
     }
 }
+
+#include "Calculator.h"
+// 显式实例化 AStack<Calculator::token>
+template class AStack<Calculator::token>;

@@ -8,8 +8,8 @@ Create a personal STL(For Data Structure)
 - [x] 链接栈
 - [x] Calculator  基于栈的后缀表达式计算器
 ## 队列（Queue）
-- [ ] 顺序循环队列
-- [ ] 链接队列
+- [x] 顺序循环队列
+- [x] 链接队列
 ## 树（Tree）
 - [ ] Binary Tree  二叉树的顺序实现和链接实现
 - [ ] Huffman Tree  哈夫曼树
